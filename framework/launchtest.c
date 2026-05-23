@@ -6,7 +6,7 @@
 /*   By: sfabi <sfabi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 14:23:35 by sfabi             #+#    #+#             */
-/*   Updated: 2026/05/23 18:13:50 by sfabi            ###   ########.fr       */
+/*   Updated: 2026/05/23 18:32:15 by sfabi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int	run_test(const char *func, const char *name, int (*f)(void), FILE* fptr)
 		fflush(fptr);
 		ret_code = -1;
 	}
-	else if (WEXITSTATUS(status) && WEXITSTATUS(status) == 0)
+	else if (WEXITSTATUS(status) == 0)
 	{
 		ft_putstr("\033[32mOK\033[0m");
 		fprintf(fptr, "%s:%s:[OK]\n", func, name);
