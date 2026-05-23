@@ -6,7 +6,7 @@
 /*   By: sfabi <sfabi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 14:23:35 by sfabi             #+#    #+#             */
-/*   Updated: 2026/05/23 16:33:56 by sfabi            ###   ########.fr       */
+/*   Updated: 2026/05/23 17:14:13 by sfabi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,13 @@ int	run_test(const char *func, const char *name, int (*f)(void), FILE* fptr)
 		fprintf(fptr, "%s:%s:[OK]\n", func, name);
 		fflush(fptr);
 		ret_code = 0;
+	}
+	else if (WIFSIGNALED(status) && WTERMSIG(status) == SIGBUS)
+	{
+		ft_putstr("\033[31mSIGBUS\033[0m");
+		fprintf(fptr, "%s:%s:[SIGBUS]\n", func, name);
+		fflush(fptr);
+		ret_code = -1;
 	}
 	else
 	{
