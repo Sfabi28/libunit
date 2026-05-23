@@ -1,0 +1,8 @@
+MEMCPY:ok test:[OK]
+MEMCPY:ko test:[KO]
+MEMCPY:segv test:[SIGSEGV]
+MEMCPY:sigbus test:[SIGBUS]
+
+1/4 tests passed
+
+
