@@ -6,7 +6,7 @@
 /*   By: sfabi <sfabi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 14:23:35 by sfabi             #+#    #+#             */
-/*   Updated: 2026/05/23 17:16:53 by sfabi            ###   ########.fr       */
+/*   Updated: 2026/05/23 18:32:15 by sfabi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,34 @@ int	run_test(const char *func, const char *name, int (*f)(void), FILE* fptr)
 	{
 		ft_putstr("\033[31mSIGBUS\033[0m");
 		fprintf(fptr, "%s:%s:[SIGBUS]\n", func, name);
+		fflush(fptr);
+		ret_code = -1;
+	}
+	else if (WIFSIGNALED(status) && WTERMSIG(status) == SIGABRT)
+	{
+		ft_putstr("\033[31mSIGABRT\033[0m");
+		fprintf(fptr, "%s:%s:[SIGABRT]\n", func, name);
+		fflush(fptr);
+		ret_code = -1;
+	}
+	else if (WIFSIGNALED(status) && WTERMSIG(status) == SIGFPE)
+	{
+		ft_putstr("\033[31mSIGFPE\033[0m");
+		fprintf(fptr, "%s:%s:[SIGFPE]\n", func, name);
+		fflush(fptr);
+		ret_code = -1;
+	}
+	else if (WIFSIGNALED(status) && WTERMSIG(status) == SIGPIPE)
+	{
+		ft_putstr("\033[31mSIGPIPE\033[0m");
+		fprintf(fptr, "%s:%s:[SIGPIPE]\n", func, name);
+		fflush(fptr);
+		ret_code = -1;
+	}
+	else if (WIFSIGNALED(status) && WTERMSIG(status) == SIGILL)
+	{
+		ft_putstr("\033[31mSIGILL\033[0m");
+		fprintf(fptr, "%s:%s:[SIGILL]\n", func, name);
 		fflush(fptr);
 		ret_code = -1;
 	}

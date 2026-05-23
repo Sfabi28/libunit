@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   01_abort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sfabi <sfabi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: copilot <copilot@local>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/23 13:43:21 by elmondo           #+#    #+#             */
-/*   Updated: 2026/05/23 18:40:44 by sfabi            ###   ########.fr       */
+/*   Created: 2026/05/23 18:45:00 by copilot           #+#    #+#             */
+/*   Updated: 2026/05/23 18:45:00 by copilot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
-#include "../libunit.h"
+#include "../tests.h"
 
-
-int	ft_memcpy_launcher(void);
-int	ft_strlen_launcher(void);
-int	ft_signals_launcher(void);
-
-int	main(void)
+int	test_abort(void)
 {
-	ft_memcpy_launcher();
-	ft_strlen_launcher();
-	ft_signals_launcher();
-	return (0);
+    abort();
+    return (0);
 }

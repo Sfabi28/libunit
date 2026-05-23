@@ -6,7 +6,7 @@
 #    By: francema <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/23 13:43:55 by elmondo           #+#    #+#              #
-#    Updated: 2026/05/23 18:39:31 by francema         ###   ########.fr        #
+#    Updated: 2026/05/23 18:47:07 by francema         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,11 @@ SRCS	= main.c \
 		  strlen/00_launcher.c \
 		  strlen/01_ok_test.c \
 		  strlen/02_ko_test.c \
+		  signals/00_launcher.c \
+		  signals/01_abort.c \
+		  signals/02_sigfpe.c \
+		  signals/03_sigpipe.c \
+		  signals/04_sigill.c \
 
 LIB	= ../libunit.a
 
