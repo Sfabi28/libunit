@@ -6,7 +6,7 @@
 /*   By: sfabi <sfabi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 14:23:35 by sfabi             #+#    #+#             */
-/*   Updated: 2026/05/23 15:04:24 by sfabi            ###   ########.fr       */
+/*   Updated: 2026/05/23 15:41:32 by sfabi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,16 @@ int	run_test(const char *func, const char *name, int (*f)(void))
 	if (WIFSIGNALED(status) && WTERMSIG(status) == SIGSEGV)
 	{
 		ret_code = -1;
-		ft_putstr("SIGSEGV");
+		ft_putstr("\033[31mSIGSEGV\033[0m");
 	}
 	else if (WEXITSTATUS(status) == 0)
 	{
-		ft_putstr("OK");
+		ft_putstr("\033[32mOK\033[0m");
 		ret_code = 0;
 	}
 	else
 	{
-		ft_putstr("KO");
+		ft_putstr("\033[31mKO\033[0m");
 		ret_code = -1;
 	}
 	ft_putstr("]\n");
@@ -67,6 +67,6 @@ int	launchtest(t_unit_tests **lst)
 		*lst = cur->next;
 		free(cur);
 	}
-	printf("\n%d/%d tests passed\n\n\n", tot_test + failed, tot_test);
+	printf("\n\033[33m%d/%d tests passed\033[0m\n\n\n", tot_test + failed, tot_test);
 	return (0);
 }
