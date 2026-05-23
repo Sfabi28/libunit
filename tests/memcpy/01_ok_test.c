@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   00_launcher.c                                      :+:      :+:    :+:   */
+/*   01_ok_test.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elmondo <elmondo@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/23 13:43:41 by elmondo           #+#    #+#             */
-/*   Updated: 2026/05/23 13:56:01 by elmondo          ###   ########.fr       */
+/*   Created: 2026/05/23 13:19:27 by elmondo           #+#    #+#             */
+/*   Updated: 2026/05/23 13:51:05 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../tests.h"
 
-int	test_strlen_ok(void);
-int	test_strlen_ko(void);
-
-int	ft_strlen_launcher(void)
+int	test_memcpy_ok(void)
 {
-	run_test("strlen", "ok test", &test_strlen_ok);
-	run_test("strlen", "ko test", &test_strlen_ko);
-	return (0);
+	char	src[6];
+	char	dst[6];
+
+	memset(src, 0, 6);
+	memset(dst, 0, 6);
+	memcpy(src, "hello", 6);
+	memcpy(dst, src, 6);
+	if (memcmp(dst, "hello", 6) == 0)
+		return (0);
+	return (-1);
 }

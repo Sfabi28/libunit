@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   00_launcher.c                                      :+:      :+:    :+:   */
+/*   03_segv_test.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elmondo <elmondo@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/23 13:43:41 by elmondo           #+#    #+#             */
-/*   Updated: 2026/05/23 13:56:01 by elmondo          ###   ########.fr       */
+/*   Created: 2026/05/23 13:19:35 by elmondo           #+#    #+#             */
+/*   Updated: 2026/05/23 13:52:48 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../tests.h"
 
-int	test_strlen_ok(void);
-int	test_strlen_ko(void);
-
-int	ft_strlen_launcher(void)
+int	test_memcpy_segv(void)
 {
-	run_test("strlen", "ok test", &test_strlen_ok);
-	run_test("strlen", "ko test", &test_strlen_ko);
+	char			src[6];
+	void *volatile	dst;
+
+	dst = NULL;
+	memcpy(dst, src, 6);
 	return (0);
 }
