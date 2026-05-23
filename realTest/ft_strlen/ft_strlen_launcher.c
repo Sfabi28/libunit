@@ -1,5 +1,10 @@
 #include "../../libunit.h"
 
+int	OK_test00();
+int	OK_test01();
+int	OK_test02();
+int	OK_test03();
+
 void	ft_strlen_launcher(void)
 {
 	t_unit_tests	*tmp = NULL;
