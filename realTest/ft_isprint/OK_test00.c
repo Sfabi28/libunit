@@ -6,7 +6,7 @@
 /*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 15:34:49 by francema          #+#    #+#             */
-/*   Updated: 2026/05/23 16:45:35 by francema         ###   ########.fr       */
+/*   Updated: 2026/05/23 19:08:19 by francema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,22 @@
 
 int	OK_test00()
 {
-	if (ft_isprint('\t') != 0)
-		return -1;
-	else
-		return 0;
+	int arr[128];
+	int i = 0;
+	int j = 0;
+
+	while (i < 128)
+	{
+		if (i >= '32' && i <= '126')
+			arr[j++] = i;
+		i++;
+	}
+	i = 0;
+	while (i < 128)
+	{
+		if (ft_isprint(arr[i]) != 0)
+			return -1;
+		i++;
+	}
+	return 0;
 }
