@@ -6,16 +6,30 @@
 /*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 15:34:49 by francema          #+#    #+#             */
-/*   Updated: 2026/05/23 16:31:20 by francema         ###   ########.fr       */
+/*   Updated: 2026/05/23 18:05:55 by francema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libunit.h"
 
-int	OK_test00()
+int	OK_test01()
 {
-	if (ft_putstr("hello"))
-		return(1);
-	else
-		return(0;)
+	int arr[128];
+	int i = 0;
+	int j = 0;
+
+	while (i < 128)
+	{
+		if (i < '0' || i > '9')
+			arr[j++] = i;
+		i++;
+	}
+	i = 0;
+	while (i < 128)
+	{
+		if (ft_isdigit(arr[i]) != 0)
+			return -1;
+		i++;
+	}
+	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 16:14:40 by francema          #+#    #+#             */
-/*   Updated: 2026/05/23 16:21:00 by francema         ###   ########.fr       */
+/*   Updated: 2026/05/23 17:23:19 by francema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,13 @@
 
 int	OK_test03(void)
 {
-	if (ft_strlen(NULL) == 0)
-		return 0;
-	else
-		return -1;
+	char	s[11] = "0123456789"
+	int		i = 0;
+	while (i <= 10)
+	{
+		if (ft_isdigit(s[i]) != 1)
+			return -1;
+		i++;
+	}
+	return 0;
 }

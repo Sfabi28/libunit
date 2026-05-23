@@ -6,16 +6,21 @@
 /*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 15:34:49 by francema          #+#    #+#             */
-/*   Updated: 2026/05/23 16:31:20 by francema         ###   ########.fr       */
+/*   Updated: 2026/05/23 17:54:13 by francema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libunit.h"
 
-int	OK_test00()
+int	OK_test03(void)
 {
-	if (ft_putstr("hello"))
-		return(1);
-	else
-		return(0;)
+	char	*s = "qwertyuiopasdfghjklzxcvbnmWERTYUIOPSDFGHJKLZXCVBNM"
+	int		i = 0;
+	while (s[i])
+	{
+		if (ft_isalpha(s[i]) != 1)
+			return -1;
+		i++;
+	}
+	return 0;
 }
