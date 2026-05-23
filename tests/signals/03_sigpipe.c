@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   03_segfault_test.c                                 :+:      :+:    :+:   */
+/*   03_sigpipe.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sfabi <sfabi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: copilot <copilot@local>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/23 17:00:00 by sfabi             #+#    #+#             */
-/*   Updated: 2026/05/23 18:31:37 by sfabi            ###   ########.fr       */
+/*   Created: 2026/05/23 18:47:00 by copilot           #+#    #+#             */
+/*   Updated: 2026/05/23 18:47:00 by copilot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../tests.h"
-#include <string.h>
 
-int test_strlen_segfault(void)
+int	test_sigpipe(void)
 {
-    char *s = NULL;
-    return ((int)strlen(s));
+    raise(SIGPIPE);
+    return (0);
 }
