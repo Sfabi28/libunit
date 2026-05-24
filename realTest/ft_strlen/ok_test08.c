@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   OK_test08.c                                        :+:      :+:    :+:   */
+/*   ok_test08.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elmondo <elmondo@student.42firenze.it>     +#+  +:+       +#+        */
+/*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 15:34:49 by francema          #+#    #+#             */
-/*   Updated: 2026/05/24 16:15:23 by elmondo          ###   ########.fr       */
+/*   Updated: 2026/05/24 17:28:59 by francema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int	ok_test08(void)
 	size_t	size;
 	char	*str;
 
-	str = malloc(size + 1);
 	size = 2147483647;
+	str = malloc(size + 1);
 	if (!str)
 		return (-1);
 	memset(str, 'a', size);

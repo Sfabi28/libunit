@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elmondo <elmondo@student.42firenze.it>     +#+  +:+       +#+        */
+/*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 14:42:07 by francema          #+#    #+#             */
-/*   Updated: 2026/05/24 16:43:55 by elmondo          ###   ########.fr       */
+/*   Updated: 2026/05/24 17:32:00 by francema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ int	main(void)
 	total++;
 	success += ft_isprint_launcher();
 	total++;
-	// success += ft_putstr_launcher();
-	// total++;
+	success += ft_putstr_launcher();
+	total++;
 	success += ft_strlen_launcher();
 	total++;
 	if (success == total)

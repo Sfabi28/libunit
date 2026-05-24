@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   realtest.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elmondo <elmondo@student.42firenze.it>     +#+  +:+       +#+        */
+/*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 16:37:27 by elmondo           #+#    #+#             */
-/*   Updated: 2026/05/24 16:40:58 by elmondo          ###   ########.fr       */
+/*   Updated: 2026/05/24 17:37:40 by francema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #define REALTEST_H
 #ifdef REALTEST_H
+
 # include "../libunit.h"
 # include <unistd.h>
 
@@ -29,17 +30,20 @@ int	ok_test01(void);
 int	ko_test02(void);
 int	ok_test02(void);
 int	ok_test03(void);
+int	ok_test04(void);
 int	ko_test03(void);
 int	ok_test05(void);
 int	ok_test06(void);
 int	ok_test07(void);
 int	ok_test08(void);
+int	ok_test09(void);
+int	ok_test10(void);
 
 int	ft_isalnum(int c);
 int	ft_isalpha(int c);
 int	ft_isdigit(int c);
 int	ft_isprint(int c);
 void	ft_putstr(const char *s);
-size_t ft_strlen(const char *s);
+size_t	ft_strlen(const char *s);
 
 #endif

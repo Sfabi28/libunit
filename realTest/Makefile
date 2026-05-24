@@ -21,12 +21,16 @@ SRCS = main.c \
        ft_strlen/ok_test06.c \
        ft_strlen/ok_test07.c \
        ft_strlen/ok_test08.c \
+       ft_putstr/ft_putstr_launcher.c \
+       ft_putstr/ok_test04.c \
+       ft_putstr/ok_test09.c \
+       ft_putstr/ok_test10.c \
        real_func/ft_isalnum.c \
        real_func/ft_isalpha.c \
        real_func/ft_isdigit.c \
        real_func/ft_isprint.c \
        real_func/ft_strlen.c \
-#        real_func/ft_putstr.c \
+       real_func/ft_putstr.c \
 
 OBJS = $(SRCS:.c=.o)
 

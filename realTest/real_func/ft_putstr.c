@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elmondo <elmondo@student.42firenze.it>     +#+  +:+       +#+        */
+/*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 16:30:01 by francema          #+#    #+#             */
-/*   Updated: 2026/05/24 16:05:16 by elmondo          ###   ########.fr       */
+/*   Updated: 2026/05/24 17:34:10 by francema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../realtest.h"
 
-void	ft_putstr(char *s)
+void	ft_putstr(const char *s)
 {
 	if (!s)
 		return ;

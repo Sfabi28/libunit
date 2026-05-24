@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   OK_test02.c                                        :+:      :+:    :+:   */
+/*   ok_test10.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elmondo <elmondo@student.42firenze.it>     +#+  +:+       +#+        */
+/*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/23 16:14:40 by francema          #+#    #+#             */
-/*   Updated: 2026/05/24 16:22:16 by elmondo          ###   ########.fr       */
+/*   Created: 2026/05/24 15:50:29 by francema          #+#    #+#             */
+/*   Updated: 2026/05/24 17:38:33 by francema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../realtest.h"
 
-int	ok_test02(void)
+int ok_test10(void)
 {
-	char	s[11];
-	int		i;
+	char *str = NULL;
+	int fd[2];
+	char c;
 
-	i = 0;
-	s[11] = "0123456789";
-	while (s[i])
+	if (pipe(fd) < 0)
+		return -1;
+	if (dup2(fd[1], 1) < 0)
+		return -1;
+	close(fd[1]);
+	ft_putstr(str);
+	if (read(fd[0], &c, 1) > 0)
 	{
-		if (ft_isdigit(s[i]) != 1)
-			return (-1);
-		i++;
+		close(fd[0]);
+		return -1;
 	}
-	return (0);
+	close(fd[0]);
+	return 0;
 }
