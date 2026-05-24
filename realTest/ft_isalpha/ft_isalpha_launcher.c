@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha_launcher.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: elmondo <elmondo@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 14:45:00 by francema          #+#    #+#             */
-/*   Updated: 2026/05/24 15:39:36 by francema         ###   ########.fr       */
+/*   Updated: 2026/05/24 16:29:21 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 int	ft_isalpha_launcher(void)
 {
-	t_unit_tests	*tmp = NULL;
+	t_unit_tests	*tmp;
 
-	loadtest(&tmp, "KO_test01", "KO", &KO_test01);
-	loadtest(&tmp, "OK_test01", "OK", &OK_test00);
+	tmp = NULL;
+	loadtest(&tmp, "ft_isalpha_ko_test01", "KO", &ko_test01);
+	loadtest(&tmp, "ft_isalpha_ok_test01", "OK", &ok_test00);
 	return (launchtest(&tmp));
 }

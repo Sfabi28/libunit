@@ -3,24 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   OK_test02.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: elmondo <elmondo@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 16:14:40 by francema          #+#    #+#             */
-/*   Updated: 2026/05/24 15:47:26 by francema         ###   ########.fr       */
+/*   Updated: 2026/05/24 16:22:16 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../realtest.h"
 
-int	OK_test02(void)
+int	ok_test02(void)
 {
-	char	s[11] = "0123456789";
-	int		i = 0;
+	char	s[11];
+	int		i;
+
+	i = 0;
+	s[11] = "0123456789";
 	while (s[i])
 	{
 		if (ft_isdigit(s[i]) != 1)
-			return -1;
+			return (-1);
 		i++;
 	}
-	return 0;
+	return (0);
 }

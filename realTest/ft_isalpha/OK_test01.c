@@ -3,24 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   OK_test01.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: elmondo <elmondo@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 15:34:49 by elmondo           #+#    #+#             */
-/*   Updated: 2026/05/24 15:46:52 by francema         ###   ########.fr       */
+/*   Updated: 2026/05/24 16:30:12 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../realtest.h"
 
-int	OK_test01(void)
+int	ok_test01(void)
 {
-	char	*s = "qwertyuiopasdfghjklzxcvbnmWERTYUIOPSDFGHJKLZXCVBNM";
-	int		i = 0;
+	char	*s;
+	int		i;
+
+	i = 0;
+	s = "qwertyuiopasdfghjklzxcvbnmWERTYUIOPSDFGHJKLZXCVBNM";
 	while (s[i])
 	{
 		if (ft_isalpha(s[i]) != 1)
-			return -1;
+			return (-1);
 		i++;
 	}
-	return 0;
+	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum_launcher.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: elmondo <elmondo@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 14:45:06 by francema          #+#    #+#             */
-/*   Updated: 2026/05/24 15:39:06 by francema         ###   ########.fr       */
+/*   Updated: 2026/05/24 16:30:31 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 int	ft_isalnum_launcher(void)
 {
-	t_unit_tests	*tmp = NULL;
+	t_unit_tests	*tmp;
 
-	loadtest(&tmp, "KO_test00", "KO", &KO_test00);
-	loadtest(&tmp, "OK_test00", "OK", &OK_test00);
+	tmp = NULL;
+	loadtest(&tmp, "ft_isalnum_ko_test00", "KO", &ko_test00);
+	loadtest(&tmp, "ft_isalnum_ok_test00", "OK", &ok_test00);
 	return (launchtest(&tmp));
 }

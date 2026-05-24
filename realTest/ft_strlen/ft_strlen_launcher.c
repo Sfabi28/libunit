@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen_launcher.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: elmondo <elmondo@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 14:45:35 by francema          #+#    #+#             */
-/*   Updated: 2026/05/24 15:49:52 by francema         ###   ########.fr       */
+/*   Updated: 2026/05/24 16:16:13 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 int	ft_strlen_launcher(void)
 {
-	t_unit_tests	*tmp = NULL;
+	t_unit_tests	*tmp;
 
-	loadtest(&tmp, "OK_test05", "OK", OK_test05);
-	loadtest(&tmp, "OK_test06", "OK", OK_test06);
-	loadtest(&tmp, "OK_test07", "OK", OK_test07);
-	loadtest(&tmp, "OK_test08", "OK", OK_test08);
+	tmp = NULL;
+	loadtest(&tmp, "ft_strlen_ok_test05", "OK", ok_test05);
+	loadtest(&tmp, "ft_strlen_ok_test06", "OK", ok_test06);
+	loadtest(&tmp, "ft_strlen_ok_test07", "OK", ok_test07);
+	loadtest(&tmp, "ft_strlen_ok_test08", "OK", ok_test08);
 	return (launchtest(&tmp));
 }

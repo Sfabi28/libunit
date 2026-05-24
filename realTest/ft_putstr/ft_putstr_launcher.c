@@ -3,20 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_launcher.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: elmondo <elmondo@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 14:45:23 by francema          #+#    #+#             */
-/*   Updated: 2026/05/24 14:55:29 by francema         ###   ########.fr       */
+/*   Updated: 2026/05/24 16:19:28 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../realtest.h"
 
-int	ft_putstr_launcher(void)
+int ft_putstr_launcher(void)
 {
-	t_unit_tests	*tmp = NULL;
+	t_unit_tests *tmp;
 
-	loadtest(&tmp, "KO_test04", "KO", &OK_test04);
-	loadtest(&tmp, "OK_test04", "OK", &OK_test04);
+	tmp = NULL;
+	loadtest(&tmp, "ft_putstr_ko_test04", "KO", &ok_test04);
+	loadtest(&tmp, "ft_putstr_ok_test04", "OK", &ok_test04);
 	return (launchtest(&tmp));
 }
