@@ -6,7 +6,7 @@
 /*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 15:34:49 by francema          #+#    #+#             */
-/*   Updated: 2026/05/24 15:04:03 by francema         ###   ########.fr       */
+/*   Updated: 2026/05/24 15:24:21 by francema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,10 @@ int	OK_test00(void)
 		i++;
 	}
 	i = 0;
-	while (j >= 0)
+	while (--j >= 0)
 	{
-		if (ft_isalnum(arr[j]) != 0)
+		if (ft_isalnum(arr[j]) == 0)
 			return -1;
-		j--;
 	}
 	return 0;
 }

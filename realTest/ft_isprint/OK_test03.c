@@ -6,7 +6,7 @@
 /*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 15:34:49 by francema          #+#    #+#             */
-/*   Updated: 2026/05/24 14:56:43 by francema         ###   ########.fr       */
+/*   Updated: 2026/05/24 15:33:58 by francema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,14 @@ int	OK_test03(void)
 
 	while (i < 128)
 	{
-		if (i >= 32 && i <= 126)
+		if (i >= ' ' && i <= '~')
 			arr[j++] = i;
 		i++;
 	}
-	i = 0;
-	while (i < 128)
+	while (--j >= 0)
 	{
-		if (ft_isprint(arr[i]) != 0)
+		if (ft_isprint(arr[j]) != 1)
 			return -1;
-		i++;
 	}
 	return 0;
 }

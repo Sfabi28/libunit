@@ -6,7 +6,7 @@
 /*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 15:34:49 by francema          #+#    #+#             */
-/*   Updated: 2026/05/24 14:56:26 by francema         ###   ########.fr       */
+/*   Updated: 2026/05/24 15:31:29 by francema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,14 @@ int	KO_test01(void)
 
 	while (i < 128)
 	{
-		if ((i < 'a' && i > 'z') || (i < 'A' && i > 'Z'))
+		if (!((i >= 'a' && i <= 'z') || (i >= 'A' && i <= 'Z')))
 			arr[j++] = i;
 		i++;
 	}
-	i = 0;
-	while (i < 128)
+	while (--j >= 0)
 	{
-		if (ft_isalpha(arr[i]) != 0)
+		if (ft_isalpha(arr[j]) != 0)
 			return -1;
-		i++;
 	}
 	return 0;
 }
