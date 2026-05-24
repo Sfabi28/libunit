@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: francema <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: sfabi <sfabi@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/23 13:43:55 by elmondo           #+#    #+#              #
-#    Updated: 2026/05/24 15:45:06 by francema         ###   ########.fr        #
+#    Updated: 2026/05/24 19:46:00 by sfabi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,11 +48,14 @@ $(NAME): $(OBJS) $(LIB)
 test: $(NAME)
 	@ ./$(NAME)
 
+val: $(NAME)
+	valgrind --leak-check=full --show-leak-kinds=all --track-fds=yes ./$(NAME)
+
 $(LIB):
 	$(MAKE) -C .. all
 
 clean:
-	rm -f $(OBJS)
+	find . -type f -name "*.o" -delete
 
 fclean: clean
 	rm -f $(NAME) *.log

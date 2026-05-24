@@ -19,8 +19,12 @@ test: all
 	$(MAKE) -C tests test
 	$(MAKE) -C real-tests test
 
+val:
+	$(MAKE) -C tests val
+	$(MAKE) -C real-tests val
+
 clean:
-	rm -f $(OBJS)
+	find . -type f -name "*.o" -delete
 
 fclean: clean
 	rm -f $(NAME)
