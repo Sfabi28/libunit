@@ -6,7 +6,7 @@
 /*   By: sfabi <sfabi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 14:23:35 by sfabi             #+#    #+#             */
-/*   Updated: 2026/05/24 12:46:10 by sfabi            ###   ########.fr       */
+/*   Updated: 2026/05/24 13:17:48 by sfabi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ static int	print_signal_result(int status, const char *func,
 int	run_test(const char *func, const char *name, int (*f)(void), FILE* fptr)
 {
 	pid_t	pid;
+	int		null_fd;
 	int		status;
 	int		ret_code;
 
@@ -64,6 +65,9 @@ int	run_test(const char *func, const char *name, int (*f)(void), FILE* fptr)
 	pid = fork();
 	if (pid == 0)
 	{
+		null_fd = open("/dev/null", O_WRONLY);
+		dup2(null_fd, 1);
+		close(null_fd);
 		alarm(3);
 		_exit(f() != 0);
 	}
@@ -99,6 +103,7 @@ int	launchtest(t_unit_tests **lst)
 	FILE* fptr = NULL;
 	char *fname;
 	size_t n;
+	t_unit_tests *cur;
 
 	n = strlen((*lst)->type) + 5;
 	fname = malloc(n);
@@ -108,10 +113,11 @@ int	launchtest(t_unit_tests **lst)
 		strcat(fname, ".log");
 		fptr = fopen(fname, "w");
 		free(fname);
+		if (!fptr)
+			return (-1);
 	}
 	failed = 0;
 	tot_test = ft_lstsize(*lst);
-	t_unit_tests *cur;
 
 	while (*lst)
 	{
