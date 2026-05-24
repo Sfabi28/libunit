@@ -6,7 +6,7 @@
 #    By: sfabi <sfabi@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/23 13:43:55 by elmondo           #+#    #+#              #
-#    Updated: 2026/05/23 18:41:50 by sfabi            ###   ########.fr        #
+#    Updated: 2026/05/24 12:37:20 by sfabi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,8 @@ SRCS	= main.c \
 		  signals/02_sigfpe.c \
 		  signals/03_sigpipe.c \
 		  signals/04_sigill.c \
+		  signals/05_sigalrm.c \
+
 
 LIB	= ../libunit.a
 
