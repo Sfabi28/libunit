@@ -50,8 +50,11 @@ void	run_test_child(t_unit_tests **lst, t_unit_tests *test, FILE *fptr)
 	fclose(stdout);
 	fclose(stderr);
 	null_fd = open("/dev/null", O_WRONLY);
-	dup2(null_fd, 1);
-	close(null_fd);
+	if (null_fd != 1)
+	{
+		dup2(null_fd, 1);
+		close(null_fd);
+	}
 	alarm(4);
 	_exit(f() != 0);
 }

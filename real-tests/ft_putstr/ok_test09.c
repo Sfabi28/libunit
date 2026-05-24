@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ok_test09.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sfabi <sfabi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: elmondo <elmondo@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 15:50:29 by francema          #+#    #+#             */
-/*   Updated: 2026/05/24 18:23:31 by sfabi            ###   ########.fr       */
+/*   Updated: 2026/05/24 20:21:54 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	check_output(int fd[2])
 		return (-1);
 	if (ft_strcmp(res, "hello") == 0)
 		return (0);
-	return (-1);
+	return (1);
 }
 
 int	ok_test09(void)
@@ -55,7 +55,8 @@ int	ok_test09(void)
 		return (-1);
 	close(fd[1]);
 	ft_putstr(str);
+	close(1);
 	if (check_output(fd) < 0)
-		return (-1);
+		return (1);
 	return (0);
 }
