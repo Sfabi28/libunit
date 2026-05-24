@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libunit.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sfabi <sfabi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 12:44:28 by elmondo           #+#    #+#             */
-/*   Updated: 2026/05/24 14:44:51 by sfabi            ###   ########.fr       */
+/*   Updated: 2026/05/24 16:35:47 by francema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_unit_tests
 	char			*name;
 	char			*type;
 	int				(*fun)(void);
+	int				fd[2];
 	struct s_unit_tests	*next;
 }	t_unit_tests;
 

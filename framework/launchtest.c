@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   launchtest.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sfabi <sfabi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 14:23:35 by elmondo           #+#    #+#             */
-/*   Updated: 2026/05/24 14:44:17 by sfabi            ###   ########.fr       */
+/*   Updated: 2026/05/24 16:05:56 by francema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	run_test_child(int (*f)(void))
 	null_fd = open("/dev/null", O_WRONLY);
 	dup2(null_fd, 1);
 	close(null_fd);
-	alarm(3);
+	alarm(4);
 	_exit(f() != 0);
 }
 
