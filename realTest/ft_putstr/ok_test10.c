@@ -6,7 +6,7 @@
 /*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 15:50:29 by francema          #+#    #+#             */
-/*   Updated: 2026/05/24 17:38:33 by francema         ###   ########.fr       */
+/*   Updated: 2026/05/24 18:14:58 by francema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int ok_test10(void)
 		return -1;
 	close(fd[1]);
 	ft_putstr(str);
+	close(1);
 	if (read(fd[0], &c, 1) > 0)
 	{
 		close(fd[0]);

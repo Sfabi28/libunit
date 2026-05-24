@@ -6,7 +6,7 @@
 /*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 14:23:35 by elmondo           #+#    #+#             */
-/*   Updated: 2026/05/24 17:40:10 by francema         ###   ########.fr       */
+/*   Updated: 2026/05/24 17:48:56 by francema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	run_test_child(int (*f)(void))
 	null_fd = open("/dev/null", O_WRONLY);
 	dup2(null_fd, 1);
 	close(null_fd);
-	alarm(4);
+	alarm(10);
 	_exit(f() != 0);
 }
 

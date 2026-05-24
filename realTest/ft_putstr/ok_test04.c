@@ -6,7 +6,7 @@
 /*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 15:50:29 by francema          #+#    #+#             */
-/*   Updated: 2026/05/24 17:38:09 by francema         ###   ########.fr       */
+/*   Updated: 2026/05/24 18:14:50 by francema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int ok_test04(void)
 		return (-1);
 	close(fd[1]);
 	ft_putstr(str);
+	close(1);
 	while (n_byt > 0)
 	{
 		n_byt = read(fd[0], &c, 1);
