@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   OK_test08.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: elmondo <elmondo@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 15:34:49 by francema          #+#    #+#             */
-/*   Updated: 2026/05/24 15:48:08 by francema         ###   ########.fr       */
+/*   Updated: 2026/05/24 16:15:23 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,13 @@ void	*ft_memset(void *s, int c, size_t n)
 	return (s);
 }
 
-int	OK_test08(void)
+int	ok_test08(void)
 {
-	size_t size = 2147483647;//int_max
-	char *str = malloc(size + 1);
+	size_t	size;
+	char	*str;
 
+	str = malloc(size + 1);
+	size = 2147483647;
 	if (!str)
 		return (-1);
 	memset(str, 'a', size);

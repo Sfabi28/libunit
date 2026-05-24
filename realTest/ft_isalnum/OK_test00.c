@@ -3,25 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   OK_test00.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: elmondo <elmondo@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 15:34:49 by francema          #+#    #+#             */
-/*   Updated: 2026/05/24 15:39:26 by francema         ###   ########.fr       */
+/*   Updated: 2026/05/24 16:34:47 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../realtest.h"
 
-int	OK_test00(void)
+int	ok_test00(void)
 {
-	int arr[128];
-	int i = 0;
-	int j = 0;
+	int	arr[128];
+	int	i;
+	int	j;
 
+	i = 0;
+	j = 0;
 	while (i < 128)
 	{
 		if ((i >= 'a' && i <= 'z') || (i >= 'A' && i <= 'Z')
-		|| (i >= '0' && i <= '9'))
+			|| (i >= '0' && i <= '9'))
 			arr[j++] = i;
 		i++;
 	}
@@ -29,7 +31,7 @@ int	OK_test00(void)
 	while (--j >= 0)
 	{
 		if (ft_isalnum(arr[j]) == 0)
-			return -1;
+			return (-1);
 	}
-	return 0;
+	return (0);
 }

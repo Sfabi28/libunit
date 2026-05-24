@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   OK_test05.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: elmondo <elmondo@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 15:34:49 by francema          #+#    #+#             */
-/*   Updated: 2026/05/24 15:47:52 by francema         ###   ########.fr       */
+/*   Updated: 2026/05/24 16:16:31 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../realtest.h"
 
-int	OK_test05(void)
+int	ok_test05(void)
 {
 	if (ft_strlen("hello") != 5)
-		return(1);
+		return (1);
 	else
-		return(0);
+		return (0);
 }

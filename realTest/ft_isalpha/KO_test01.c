@@ -3,22 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   KO_test01.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: elmondo <elmondo@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 15:46:13 by francema          #+#    #+#             */
-/*   Updated: 2026/05/24 15:46:16 by francema         ###   ########.fr       */
+/*   Updated: 2026/05/24 16:33:33 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../realtest.h"
 
-int	KO_test01(void)
+int	ko_test01(void)
 {
-	int arr[128];
-	int i = 0;
-	int j = 0;
+	int	arr[128];
+	int	i;
+	int	j;
 
+	j = 0;
+	i = 0;
 	while (i < 128)
 	{
 		if (!((i >= 'a' && i <= 'z') || (i >= 'A' && i <= 'Z')))
@@ -28,7 +29,7 @@ int	KO_test01(void)
 	while (--j >= 0)
 	{
 		if (ft_isalpha(arr[j]) != 0)
-			return -1;
+			return (-1);
 	}
-	return 0;
+	return (0);
 }
