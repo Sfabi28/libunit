@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   OK_test09.c                                        :+:      :+:    :+:   */
+/*   ok_test09.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sfabi <sfabi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 15:50:29 by francema          #+#    #+#             */
-/*   Updated: 2026/05/24 17:10:33 by francema         ###   ########.fr       */
+/*   Updated: 2026/05/24 18:23:31 by sfabi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../realtest.h"
 
-static int	ft_strcmp(const char* s1, const char* s2)
+static int	ft_strcmp(const char *s1, const char *s2)
 {
 	size_t	i;
 
@@ -26,15 +26,13 @@ int	check_output(int fd[2])
 {
 	char	res[6];
 	int		i;
-	int		n_byt;
 
 	i = 0;
-	n_byt = 1;
-	while ((n_byt = read(fd[0], &res[i], 1)) > 0)
+	while (read(fd[0], &res[i], 1) > 0)
 	{
 		i++;
 		if (i >= 5)
-			break;
+			break ;
 	}
 	res[i] = '\0';
 	close(fd[0]);

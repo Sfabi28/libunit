@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sfabi <sfabi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2026/05/24 15:38:05 by francema         ###   ########.fr       */
+/*   Created: 2026/05/24 18:16:53 by sfabi             #+#    #+#             */
+/*   Updated: 2026/05/24 18:17:10 by sfabi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "tests.h"
 #include "../libunit.h"

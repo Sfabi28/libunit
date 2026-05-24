@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ok_test04.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sfabi <sfabi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 15:50:29 by francema          #+#    #+#             */
-/*   Updated: 2026/05/24 18:14:50 by francema         ###   ########.fr       */
+/*   Updated: 2026/05/24 18:24:04 by sfabi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../realtest.h"
 
-int ok_test04(void)
+int	ok_test04(void)
 {
-	char *str;
-	int fd[2];
-	char c;
-	int	n_byt;
+	char	*str;
+	int		fd[2];
+	char	c;
+	int		n_byt;
 
 	str = "";
 	n_byt = 1;
