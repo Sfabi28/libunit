@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum_launcher.c                              :+:      :+:    :+:   */
+/*   ft_isdigit_launcher.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elmondo <elmondo@student.42firenze.it>     +#+  +:+       +#+        */
+/*   By: sfabi <sfabi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/24 14:45:06 by francema          #+#    #+#             */
-/*   Updated: 2026/05/24 16:30:31 by elmondo          ###   ########.fr       */
+/*   Created: 2026/05/24 14:44:54 by francema          #+#    #+#             */
+/*   Updated: 2026/05/24 19:11:08 by sfabi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../realtest.h"
 
-int	ft_isalnum_launcher(void)
+int	ft_isdigit_launcher(void)
 {
 	t_unit_tests	*tmp;
 
 	tmp = NULL;
-	loadtest(&tmp, "ft_isalnum_ko_test00", "KO", &ko_test00);
-	loadtest(&tmp, "ft_isalnum_ok_test00", "OK", &ok_test00);
+	loadtest(&tmp, "ft_isdigit", "KO", &ko_test02);
+	loadtest(&tmp, "ft_isdigit", "OK", &ok_test02);
 	return (launchtest(&tmp));
 }

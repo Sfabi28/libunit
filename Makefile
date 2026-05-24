@@ -17,12 +17,16 @@ $(NAME): $(OBJS)
 
 test: all
 	$(MAKE) -C tests test
+	$(MAKE) -C real-tests test
 
 clean:
 	rm -f $(OBJS)
 
 fclean: clean
 	rm -f $(NAME)
+	$(MAKE) -C tests fclean
+	$(MAKE) -C real-tests fclean
+
 
 re: fclean all
 

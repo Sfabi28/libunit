@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit_launcher.c                              :+:      :+:    :+:   */
+/*   ft_strlen_launcher.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elmondo <elmondo@student.42firenze.it>     +#+  +:+       +#+        */
+/*   By: sfabi <sfabi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/24 14:44:54 by francema          #+#    #+#             */
-/*   Updated: 2026/05/24 16:19:53 by elmondo          ###   ########.fr       */
+/*   Created: 2026/05/24 14:45:35 by francema          #+#    #+#             */
+/*   Updated: 2026/05/24 19:11:40 by sfabi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../realtest.h"
 
-int	ft_isdigit_launcher(void)
+int	ft_strlen_launcher(void)
 {
 	t_unit_tests	*tmp;
 
 	tmp = NULL;
-	loadtest(&tmp, "ft_isdigit_lko_test02", "KO", &ko_test02);
-	loadtest(&tmp, "ft_isdigit_lok_test02", "OK", &ok_test02);
+	loadtest(&tmp, "ft_strlen", "OK", ok_test05);
+	loadtest(&tmp, "ft_strlen", "OK", ok_test06);
+	loadtest(&tmp, "ft_strlen", "OK", ok_test07);
+	loadtest(&tmp, "ft_strlen", "OK", ok_test08);
 	return (launchtest(&tmp));
 }

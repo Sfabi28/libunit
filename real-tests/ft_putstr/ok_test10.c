@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_launcher.c                               :+:      :+:    :+:   */
+/*   ok_test10.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sfabi <sfabi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/24 14:45:23 by francema          #+#    #+#             */
-/*   Updated: 2026/05/24 18:22:40 by sfabi            ###   ########.fr       */
+/*   Created: 2026/05/24 15:50:29 by francema          #+#    #+#             */
+/*   Updated: 2026/05/24 19:06:24 by sfabi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../realtest.h"
 
-int	ft_putstr_launcher(void)
+int	ok_test10(void)
 {
-	t_unit_tests	*tmp;
+	char	*str;
+	int		fd[2];
+	char	c;
 
-	tmp = NULL;
-	loadtest(&tmp, "ft_putstr_ok_test04", "OK", &ok_test04);
-	loadtest(&tmp, "ft_putstr_ok_test09", "OK", &ok_test09);
-	loadtest(&tmp, "ft_putstr_ko_test10", "OK", &ok_test10);
-	return (launchtest(&tmp));
+	str = NULL;
+	if (pipe(fd) < 0)
+		return (-1);
+	if (dup2(fd[1], 1) < 0)
+		return (-1);
+	close(fd[1]);
+	ft_putstr(str);
+	close(1);
+	if (read(fd[0], &c, 1) > 0)
+	{
+		close(fd[0]);
+		return (-1);
+	}
+	close(fd[0]);
+	return (0);
 }
