@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   04_bus_test.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sfabi <sfabi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: elmondo <elmondo@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 13:19:36 by elmondo           #+#    #+#             */
-/*   Updated: 2026/05/24 12:54:33 by sfabi            ###   ########.fr       */
+/*   Updated: 2026/05/24 14:13:01 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../tests.h"
 
-int bus_test(void)
+int	bus_test(void)
 {
 	raise(SIGBUS);
 	return (0);

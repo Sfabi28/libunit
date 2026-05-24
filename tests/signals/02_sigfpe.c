@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   02_sigfpe.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: copilot <copilot@local>                     +#+  +:+       +#+        */
+/*   By: elmondo <elmondo@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/23 18:46:00 by copilot           #+#    #+#             */
-/*   Updated: 2026/05/23 18:46:00 by copilot          ###   ########.fr       */
+/*   Created: 2026/05/23 18:46:00 by elmondo           #+#    #+#             */
+/*   Updated: 2026/05/24 14:14:13 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int	test_sigfpe(void)
 {
-    raise(SIGFPE);
-    return (0);
+	raise(SIGFPE);
+	return (0);
 }
