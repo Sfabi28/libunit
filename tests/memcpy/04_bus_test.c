@@ -3,19 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   04_bus_test.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: elmondo <elmondo@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 13:19:36 by elmondo           #+#    #+#             */
-/*   Updated: 2026/05/23 18:31:01 by francema         ###   ########.fr       */
+/*   Updated: 2026/05/24 14:13:01 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../tests.h"
 
-int bus_test(void)
+int	bus_test(void)
 {
-	char buffer[8];
-	int *p = (int *)(buffer + 1);
-	*p = 42; // può generare SIGBUS (dipende architettura)
+	raise(SIGBUS);
 	return (0);
 }

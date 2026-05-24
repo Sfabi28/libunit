@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sfabi <sfabi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/23 14:23:35 by sfabi             #+#    #+#             */
-/*   Updated: 2026/05/23 18:32:15 by sfabi            ###   ########.fr       */
+/*   Created: 2026/05/23 14:23:35 by elmondo           #+#    #+#             */
+/*   Updated: 2026/05/24 14:44:17 by sfabi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,39 @@ void	ft_putstr(const char *s)
 	write(1, s, strlen(s));
 }
 
-int	run_test(const char *func, const char *name, int (*f)(void), FILE* fptr)
+const char	*get_signal_name(int status)
+{
+	if (!WIFSIGNALED(status))
+		return (NULL);
+	if (WTERMSIG(status) == SIGSEGV)
+		return ("SIGSEGV");
+	if (WTERMSIG(status) == SIGBUS)
+		return ("SIGBUS");
+	if (WTERMSIG(status) == SIGABRT)
+		return ("SIGABRT");
+	if (WTERMSIG(status) == SIGFPE)
+		return ("SIGFPE");
+	if (WTERMSIG(status) == SIGPIPE)
+		return ("SIGPIPE");
+	if (WTERMSIG(status) == SIGILL)
+		return ("SIGILL");
+	if (WTERMSIG(status) == SIGALRM)
+		return ("SIGALRM");
+	return (NULL);
+}
+
+void	run_test_child(int (*f)(void))
+{
+	int	null_fd;
+
+	null_fd = open("/dev/null", O_WRONLY);
+	dup2(null_fd, 1);
+	close(null_fd);
+	alarm(3);
+	_exit(f() != 0);
+}
+
+int	run_test(const char *func, const char *name, int (*f)(void), FILE *fptr)
 {
 	pid_t	pid;
 	int		status;
@@ -26,106 +58,37 @@ int	run_test(const char *func, const char *name, int (*f)(void), FILE* fptr)
 	ret_code = 0;
 	pid = fork();
 	if (pid == 0)
-		_exit(f() != 0);
-	waitpid(pid, &status, 0);
+		run_test_child(f);
+	wait(&status);
 	ft_putstr(func);
 	ft_putstr(":");
 	ft_putstr(name);
 	ft_putstr(":[");
-	if (WIFSIGNALED(status) && WTERMSIG(status) == SIGSEGV)
-	{
-		ft_putstr("\033[31mSIGSEGV\033[0m");
-		fprintf(fptr, "%s:%s:[SIGSEGV]\n", func, name);
-		fflush(fptr);
-		ret_code = -1;
-	}
-	else if (WIFSIGNALED(status) && WTERMSIG(status) == SIGBUS)
-	{
-		ft_putstr("\033[31mSIGBUS\033[0m");
-		fprintf(fptr, "%s:%s:[SIGBUS]\n", func, name);
-		fflush(fptr);
-		ret_code = -1;
-	}
-	else if (WIFSIGNALED(status) && WTERMSIG(status) == SIGABRT)
-	{
-		ft_putstr("\033[31mSIGABRT\033[0m");
-		fprintf(fptr, "%s:%s:[SIGABRT]\n", func, name);
-		fflush(fptr);
-		ret_code = -1;
-	}
-	else if (WIFSIGNALED(status) && WTERMSIG(status) == SIGFPE)
-	{
-		ft_putstr("\033[31mSIGFPE\033[0m");
-		fprintf(fptr, "%s:%s:[SIGFPE]\n", func, name);
-		fflush(fptr);
-		ret_code = -1;
-	}
-	else if (WIFSIGNALED(status) && WTERMSIG(status) == SIGPIPE)
-	{
-		ft_putstr("\033[31mSIGPIPE\033[0m");
-		fprintf(fptr, "%s:%s:[SIGPIPE]\n", func, name);
-		fflush(fptr);
-		ret_code = -1;
-	}
-	else if (WIFSIGNALED(status) && WTERMSIG(status) == SIGILL)
-	{
-		ft_putstr("\033[31mSIGILL\033[0m");
-		fprintf(fptr, "%s:%s:[SIGILL]\n", func, name);
-		fflush(fptr);
-		ret_code = -1;
-	}
-	else if (WEXITSTATUS(status) == 0)
-	{
-		ft_putstr("\033[32mOK\033[0m");
-		fprintf(fptr, "%s:%s:[OK]\n", func, name);
-		fflush(fptr);
-		ret_code = 0;
-	}
-	else
-	{
-		ft_putstr("\033[31mKO\033[0m");
-		fprintf(fptr, "%s:%s:[KO]\n", func, name);
-		fflush(fptr);
-		ret_code = -1;
-	}
+	ret_code = handle_test_result(status, func, name, fptr);
 	ft_putstr("]\n");
 	return (ret_code);
 }
 
 int	launchtest(t_unit_tests **lst)
 {
-	int tot_test;
-	int failed;
-	FILE* fptr = NULL;
-	char *fname;
-	size_t n;
+	int				tot;
+	int				failed;
+	FILE			*fptr;
 
-	n = strlen((*lst)->type) + 5;
-	fname = malloc(n);
-	if (fname)
-	{
-		strcpy(fname, (*lst)->type);
-		strcat(fname, ".log");
-		fptr = fopen(fname, "w");
-		free(fname);
-	}
+	fptr = open_log_file((*lst)->type);
+	if (!fptr)
+		return (-1);
 	failed = 0;
-	tot_test = ft_lstsize(*lst);
-	t_unit_tests *cur;
-
+	tot = ft_lstsize(*lst);
 	while (*lst)
 	{
-		cur = *lst;
-		failed += run_test(cur->type, cur->name, cur->fun, fptr);
-		*lst = cur->next;
-		free(cur);
+		failed += run_test((*lst)->type, (*lst)->name, (*lst)->fun, fptr);
+		free_test_node(lst);
 	}
-	printf("\n\033[33m%d/%d tests passed\033[0m\n\n\n", tot_test + failed, tot_test);
-	fprintf(fptr, "\n%d/%d tests passed\n\n\n", tot_test + failed, tot_test);
-
-
-	if (fptr)
-		fclose(fptr);
-
+	printf("\n\033[33m%d/%d tests passed\033[0m\n\n\n", tot + failed, tot);
+	fprintf(fptr, "\n%d/%d tests passed\n\n\n", tot + failed, tot);
+	fclose(fptr);
+	if (failed < 0)
+		return (-1);
 	return (0);
 }

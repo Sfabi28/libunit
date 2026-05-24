@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   01_abort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: copilot <copilot@local>                     +#+  +:+       +#+        */
+/*   By: elmondo <elmondo@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/23 18:45:00 by copilot           #+#    #+#             */
-/*   Updated: 2026/05/23 18:45:00 by copilot          ###   ########.fr       */
+/*   Created: 2026/05/23 18:45:00 by elmondo           #+#    #+#             */
+/*   Updated: 2026/05/24 14:13:58 by elmondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int	test_abort(void)
 {
-    abort();
-    return (0);
+	abort();
+	return (0);
 }

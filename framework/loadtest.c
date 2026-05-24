@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sfabi <sfabi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/23 12:59:35 by sfabi             #+#    #+#             */
-/*   Updated: 2026/05/23 14:57:17 by sfabi            ###   ########.fr       */
+/*   Created: 2026/05/23 12:59:35 by elmondo           #+#    #+#             */
+/*   Updated: 2026/05/24 14:35:24 by sfabi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_unit_tests	*ft_lstlast(t_unit_tests *lst)
 int	ft_lstsize(t_unit_tests *lst)
 {
 	t_unit_tests	*new;
-	int		cont;
+	int				cont;
 
 	cont = 0;
 	new = lst;
