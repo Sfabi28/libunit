@@ -6,7 +6,7 @@
 /*   By: sfabi <sfabi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 12:44:28 by sfabi             #+#    #+#             */
-/*   Updated: 2026/05/23 15:01:42 by sfabi            ###   ########.fr       */
+/*   Updated: 2026/05/24 12:09:49 by sfabi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <sys/types.h>
+# include <sys/wait.h>
 # include "tests/tests.h"
 
 typedef struct s_unit_tests

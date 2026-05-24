@@ -1,6 +1,0 @@
-*.o
-tests/tests
-libunit.a
-libunit.pdf
-*.log
-*.md

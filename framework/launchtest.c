@@ -6,7 +6,7 @@
 /*   By: sfabi <sfabi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 14:23:35 by sfabi             #+#    #+#             */
-/*   Updated: 2026/05/23 18:32:15 by sfabi            ###   ########.fr       */
+/*   Updated: 2026/05/24 12:46:10 by sfabi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,43 @@
 void	ft_putstr(const char *s)
 {
 	write(1, s, strlen(s));
+}
+
+static const char	*get_signal_name(int status)
+{
+	if (!WIFSIGNALED(status))
+		return (NULL);
+	if (WTERMSIG(status) == SIGSEGV)
+		return ("SIGSEGV");
+	if (WTERMSIG(status) == SIGBUS)
+		return ("SIGBUS");
+	if (WTERMSIG(status) == SIGABRT)
+		return ("SIGABRT");
+	if (WTERMSIG(status) == SIGFPE)
+		return ("SIGFPE");
+	if (WTERMSIG(status) == SIGPIPE)
+		return ("SIGPIPE");
+	if (WTERMSIG(status) == SIGILL)
+		return ("SIGILL");
+	if (WTERMSIG(status) == SIGALRM)
+		return ("SIGALRM");
+	return (NULL);
+}
+
+static int	print_signal_result(int status, const char *func,
+	const char *name, FILE *fptr)
+{
+	const char	*signal_name;
+
+	signal_name = get_signal_name(status);
+	if (signal_name == NULL)
+		return (0);
+	ft_putstr("\033[31m");
+	ft_putstr(signal_name);
+	ft_putstr("\033[0m");
+	fprintf(fptr, "%s:%s:[%s]\n", func, name, signal_name);
+	fflush(fptr);
+	return (-1);
 }
 
 int	run_test(const char *func, const char *name, int (*f)(void), FILE* fptr)
@@ -26,55 +63,18 @@ int	run_test(const char *func, const char *name, int (*f)(void), FILE* fptr)
 	ret_code = 0;
 	pid = fork();
 	if (pid == 0)
+	{
+		alarm(3);
 		_exit(f() != 0);
-	waitpid(pid, &status, 0);
+	}
+	wait(&status);
 	ft_putstr(func);
 	ft_putstr(":");
 	ft_putstr(name);
 	ft_putstr(":[");
-	if (WIFSIGNALED(status) && WTERMSIG(status) == SIGSEGV)
-	{
-		ft_putstr("\033[31mSIGSEGV\033[0m");
-		fprintf(fptr, "%s:%s:[SIGSEGV]\n", func, name);
-		fflush(fptr);
+	if (print_signal_result(status, func, name, fptr) == -1)
 		ret_code = -1;
-	}
-	else if (WIFSIGNALED(status) && WTERMSIG(status) == SIGBUS)
-	{
-		ft_putstr("\033[31mSIGBUS\033[0m");
-		fprintf(fptr, "%s:%s:[SIGBUS]\n", func, name);
-		fflush(fptr);
-		ret_code = -1;
-	}
-	else if (WIFSIGNALED(status) && WTERMSIG(status) == SIGABRT)
-	{
-		ft_putstr("\033[31mSIGABRT\033[0m");
-		fprintf(fptr, "%s:%s:[SIGABRT]\n", func, name);
-		fflush(fptr);
-		ret_code = -1;
-	}
-	else if (WIFSIGNALED(status) && WTERMSIG(status) == SIGFPE)
-	{
-		ft_putstr("\033[31mSIGFPE\033[0m");
-		fprintf(fptr, "%s:%s:[SIGFPE]\n", func, name);
-		fflush(fptr);
-		ret_code = -1;
-	}
-	else if (WIFSIGNALED(status) && WTERMSIG(status) == SIGPIPE)
-	{
-		ft_putstr("\033[31mSIGPIPE\033[0m");
-		fprintf(fptr, "%s:%s:[SIGPIPE]\n", func, name);
-		fflush(fptr);
-		ret_code = -1;
-	}
-	else if (WIFSIGNALED(status) && WTERMSIG(status) == SIGILL)
-	{
-		ft_putstr("\033[31mSIGILL\033[0m");
-		fprintf(fptr, "%s:%s:[SIGILL]\n", func, name);
-		fflush(fptr);
-		ret_code = -1;
-	}
-	else if (WEXITSTATUS(status) == 0)
+	else if (WIFEXITED(status) && WEXITSTATUS(status) == 0)
 	{
 		ft_putstr("\033[32mOK\033[0m");
 		fprintf(fptr, "%s:%s:[OK]\n", func, name);
@@ -122,10 +122,8 @@ int	launchtest(t_unit_tests **lst)
 	}
 	printf("\n\033[33m%d/%d tests passed\033[0m\n\n\n", tot_test + failed, tot_test);
 	fprintf(fptr, "\n%d/%d tests passed\n\n\n", tot_test + failed, tot_test);
-
-
-	if (fptr)
-		fclose(fptr);
-
+	fclose(fptr);
+	if (failed < 0)
+		return (-1);
 	return (0);
 }
