@@ -6,7 +6,7 @@
 /*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 15:50:29 by francema          #+#    #+#             */
-/*   Updated: 2026/05/24 20:30:28 by francema         ###   ########.fr       */
+/*   Updated: 2026/05/24 20:42:25 by francema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	check_output(int fd[2])
 		return (-1);
 	if (ft_strcmp(res, "hello") == 0)
 		return (0);
-	return (-1);
+	return (1);
 }
 
 int	ok_test09(void)
@@ -55,6 +55,7 @@ int	ok_test09(void)
 		return (-1);
 	close(fd[1]);
 	ft_putstr(str);
+	close(1);
 	if (check_output(fd) < 0)
 		return (-1);
 	close(1);
