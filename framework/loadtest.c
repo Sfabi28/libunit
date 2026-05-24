@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   loadtest.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elmondo <elmondo@student.42firenze.it>     +#+  +:+       +#+        */
+/*   By: sfabi <sfabi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 12:59:35 by elmondo           #+#    #+#             */
-/*   Updated: 2026/05/24 14:06:58 by elmondo          ###   ########.fr       */
+/*   Updated: 2026/05/24 14:35:24 by sfabi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_unit_tests	*ft_lstlast(t_unit_tests *lst)
 int	ft_lstsize(t_unit_tests *lst)
 {
 	t_unit_tests	*new;
-	int		cont;
+	int				cont;
 
 	cont = 0;
 	new = lst;

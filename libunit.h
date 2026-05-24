@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libunit.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elmondo <elmondo@student.42firenze.it>     +#+  +:+       +#+        */
+/*   By: sfabi <sfabi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 12:44:28 by elmondo           #+#    #+#             */
-/*   Updated: 2026/05/24 14:06:58 by elmondo          ###   ########.fr       */
+/*   Updated: 2026/05/24 14:44:51 by sfabi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,17 @@ typedef struct s_unit_tests
 
 void	loadtest(t_unit_tests **lst, char *type, char *name, int (*fun)(void));
 int		launchtest(t_unit_tests **lst);
-int		ft_lstsize(t_unit_tests *lst);
-
-
-
+t_unit_tests		*ft_lstlast(t_unit_tests *lst);
+int			ft_lstsize(t_unit_tests *lst);
+void		ft_putstr(const char *s);
+const char		*get_signal_name(int status);
+void						run_test_child(int (*f)(void));
+int					run_test(const char *func, const char *name,
+					int (*f)(void), FILE *fptr);
+FILE					*open_log_file(const char *type);
+void					free_test_node(t_unit_tests **lst);
+int				handle_test_result(int status, const char *func,
+					const char *name, FILE *fptr);
+int				print_signal_result(int status, const char *func,
+					const char *name, FILE *fptr);
 #endif
