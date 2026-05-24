@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tests.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sfabi <sfabi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 13:44:26 by elmondo           #+#    #+#             */
-/*   Updated: 2026/05/24 17:41:50 by francema         ###   ########.fr       */
+/*   Updated: 2026/05/24 19:58:30 by sfabi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,10 @@
 # include <fcntl.h>
 # include <unistd.h>
 
+typedef struct s_unit_tests	t_unit_tests;
+
 // void	ft_putstr2(const char *s);
-int		run_test(const char *func, const char *name, int (*f)(void),
-			FILE *fptr);
+int		run_test(t_unit_tests **lst, const char *func, const char *name,
+			int (*f)(void), FILE *fptr);
 
 #endif
