@@ -6,7 +6,7 @@
 /*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 12:44:28 by elmondo           #+#    #+#             */
-/*   Updated: 2026/05/24 16:35:47 by francema         ###   ########.fr       */
+/*   Updated: 2026/05/24 17:39:55 by francema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	loadtest(t_unit_tests **lst, char *type, char *name, int (*fun)(void));
 int		launchtest(t_unit_tests **lst);
 t_unit_tests		*ft_lstlast(t_unit_tests *lst);
 int			ft_lstsize(t_unit_tests *lst);
-void		ft_putstr(const char *s);
+void		ft_putstr2(const char *s);
 const char		*get_signal_name(int status);
 void						run_test_child(int (*f)(void));
 int					run_test(const char *func, const char *name,

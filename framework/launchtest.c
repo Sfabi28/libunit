@@ -6,13 +6,13 @@
 /*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 14:23:35 by elmondo           #+#    #+#             */
-/*   Updated: 2026/05/24 16:05:56 by francema         ###   ########.fr       */
+/*   Updated: 2026/05/24 17:40:10 by francema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libunit.h"
 
-void	ft_putstr(const char *s)
+void	ft_putstr2(const char *s)
 {
 	write(1, s, strlen(s));
 }
@@ -60,12 +60,12 @@ int	run_test(const char *func, const char *name, int (*f)(void), FILE *fptr)
 	if (pid == 0)
 		run_test_child(f);
 	wait(&status);
-	ft_putstr(func);
-	ft_putstr(":");
-	ft_putstr(name);
-	ft_putstr(":[");
+	ft_putstr2(func);
+	ft_putstr2(":");
+	ft_putstr2(name);
+	ft_putstr2(":[");
 	ret_code = handle_test_result(status, func, name, fptr);
-	ft_putstr("]\n");
+	ft_putstr2("]\n");
 	return (ret_code);
 }
 

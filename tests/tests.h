@@ -6,7 +6,7 @@
 /*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 13:44:26 by elmondo           #+#    #+#             */
-/*   Updated: 2026/05/24 15:38:22 by francema         ###   ########.fr       */
+/*   Updated: 2026/05/24 17:41:50 by francema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # include <fcntl.h>
 # include <unistd.h>
 
-void	ft_putstr(const char *s);
+// void	ft_putstr2(const char *s);
 int		run_test(const char *func, const char *name, int (*f)(void),
 			FILE *fptr);
 
