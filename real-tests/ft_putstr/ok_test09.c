@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ok_test09.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sfabi <sfabi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 15:50:29 by francema          #+#    #+#             */
-/*   Updated: 2026/05/24 18:23:31 by sfabi            ###   ########.fr       */
+/*   Updated: 2026/05/24 20:30:28 by francema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,6 @@ int	ok_test09(void)
 	ft_putstr(str);
 	if (check_output(fd) < 0)
 		return (-1);
+	close(1);
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   launchtest.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sfabi <sfabi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 14:23:35 by elmondo           #+#    #+#             */
-/*   Updated: 2026/05/24 20:18:14 by sfabi            ###   ########.fr       */
+/*   Updated: 2026/05/24 20:39:04 by francema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,6 @@ void	run_test_child(t_unit_tests **lst, t_unit_tests *test, FILE *fptr)
 	while (*lst)
 		free_test_node(lst);
 	fclose(fptr);
-	fclose(stdout);
-	fclose(stderr);
 	null_fd = open("/dev/null", O_WRONLY);
 	dup2(null_fd, 1);
 	close(null_fd);
