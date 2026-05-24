@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   OK_test00.c                                        :+:      :+:    :+:   */
+/*   OK_test06.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 15:34:49 by francema          #+#    #+#             */
-/*   Updated: 2026/05/23 19:05:20 by francema         ###   ########.fr       */
+/*   Updated: 2026/05/24 14:56:52 by francema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libunit.h"
+#include "../realtest.h"
 
-int	OK_test00(void)
+int	OK_test06(void)
 {
-	char	*s = "qwertyuiopasdfghjklzxcvbnmWERTYUIOPSDFGHJKLZXCVBNM"
-	int		i = 0;
-	while (s[i])
-	{
-		if (ft_isalpha(s[i]) != 1)
-			return -1;
-		i++;
-	}
-	return 0;
+	if (ft_strlen("") != 0)
+		return(1);
+	else
+		return(0);
 }

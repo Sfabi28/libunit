@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   KO_test00.c                                        :+:      :+:    :+:   */
+/*   OK_test01.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 15:34:49 by francema          #+#    #+#             */
-/*   Updated: 2026/05/23 19:05:48 by francema         ###   ########.fr       */
+/*   Updated: 2026/05/24 14:56:30 by francema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libunit.h"
+#include "../realtest.h"
 
-int	KO_test00()
+int	OK_test01(void)
 {
-	int arr[128];
-	int i = 0;
-	int j = 0;
-
-	while (i < 128)
+	char	*s = "qwertyuiopasdfghjklzxcvbnmWERTYUIOPSDFGHJKLZXCVBNM";
+	int		i = 0;
+	while (s[i])
 	{
-		if (i < '0' || i > '9')
-			arr[j++] = i;
-		i++;
-	}
-	i = 0;
-	while (i < 128)
-	{
-		if (ft_isdigit(arr[i]) != 0)
+		if (ft_isalpha(s[i]) != 1)
 			return -1;
 		i++;
 	}

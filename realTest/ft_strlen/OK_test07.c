@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit_launcher.c                              :+:      :+:    :+:   */
+/*   OK_test07.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/24 14:44:54 by francema          #+#    #+#             */
-/*   Updated: 2026/05/24 14:54:50 by francema         ###   ########.fr       */
+/*   Created: 2026/05/23 16:14:40 by francema          #+#    #+#             */
+/*   Updated: 2026/05/24 14:56:55 by francema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../realtest.h"
 
-int	ft_isdigit_launcher(void)
+int	OK_test07(void)
 {
-	t_unit_tests	*tmp = NULL;
-
-	loadtest(&tmp, "KO_test02", "KO", &KO_test02);
-	loadtest(&tmp, "OK_test02", "OK", &OK_test02);
-	return (launchtest(&tmp));
+	if (ft_strlen(NULL) == 0)
+		return 0;
+	else
+		return -1;
 }

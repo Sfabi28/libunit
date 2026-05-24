@@ -6,13 +6,13 @@
 /*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 15:34:49 by francema          #+#    #+#             */
-/*   Updated: 2026/05/23 19:11:10 by francema         ###   ########.fr       */
+/*   Updated: 2026/05/24 14:56:19 by francema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libunit.h"
+#include "../realtest.h"
 
-int	KO_test00()
+int	KO_test00(void)
 {
 	int arr[128];
 	int i = 0;

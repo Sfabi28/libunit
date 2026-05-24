@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   OK_test02.c                                        :+:      :+:    :+:   */
+/*   OK_test08.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 15:34:49 by francema          #+#    #+#             */
-/*   Updated: 2026/05/23 16:04:32 by francema         ###   ########.fr       */
+/*   Updated: 2026/05/24 14:56:58 by francema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libunit.h"
+#include "../realtest.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
@@ -25,7 +25,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	return (s);
 }
 
-int OK_test02(void)
+int	OK_test08(void)
 {
 	size_t size = 2147483647;//int_max
 	char *str = malloc(size + 1);

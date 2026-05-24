@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   00_launcher.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sfabi <sfabi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 13:43:41 by elmondo           #+#    #+#             */
-/*   Updated: 2026/05/23 15:06:07 by sfabi            ###   ########.fr       */
+/*   Updated: 2026/05/23 20:17:58 by francema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int	test_strlen_ok(void);
 int	test_strlen_ko(void);
 
-int	ft_strlen_launcher(void)
+int	strlen_launcher(void)
 {
 	t_unit_tests	*tests = NULL;
 

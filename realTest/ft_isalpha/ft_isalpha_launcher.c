@@ -1,13 +1,22 @@
-#include "../../libunit.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isalpha_launcher.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/24 14:45:00 by francema          #+#    #+#             */
+/*   Updated: 2026/05/24 14:54:47 by francema         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	KO_test00();
-int	OK_test00();
+#include "../realtest.h"
 
-int	ft_strlen_launcher(void)
+int	ft_isalpha_launcher(void)
 {
 	t_unit_tests	*tmp = NULL;
 
-	loadtest(&tmp, "KO_test00", "OK", &KO_test00);
-	loadtest(&tmp, "OK_test00", "OK", &OK_test00);
-	return (launchtest(&tmp))
+	loadtest(&tmp, "KO_test01", "KO", &KO_test01);
+	loadtest(&tmp, "OK_test01", "OK", &OK_test00);
+	return (launchtest(&tmp));
 }

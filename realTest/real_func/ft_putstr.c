@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   KO_test00.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/23 15:34:49 by francema          #+#    #+#             */
-/*   Updated: 2026/05/23 19:00:52 by francema         ###   ########.fr       */
+/*   Created: 2025/04/30 16:30:01 by francema          #+#    #+#             */
+/*   Updated: 2026/05/24 14:56:02 by francema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libunit.h"
+#include "../realtest.h"
 
-int	OK_test00()
+void	ft_putstr(char *s)
 {
-	int arr[128];
-	int i = 0;
-	int j = 0;
-
-	while (i < 128)
+	if (!s)
+		return ;
+	while(*s)
 	{
-		if (i < '32' || i > '126')
-			arr[j++] = i;
-		i++;
+		write(1, &(*s), 1);
+		s++;
 	}
-	i = 0;
-	while (i < 128)
-	{
-		if (ft_isprint(arr[i]) != 0)
-			return -1;
-		i++;
-	}
-	return 0;
 }

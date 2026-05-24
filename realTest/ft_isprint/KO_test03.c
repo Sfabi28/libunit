@@ -1,21 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   OK_test00.c                                        :+:      :+:    :+:   */
+/*   KO_test03.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 15:34:49 by francema          #+#    #+#             */
-/*   Updated: 2026/05/23 15:45:04 by francema         ###   ########.fr       */
+/*   Updated: 2026/05/24 14:59:01 by francema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libunit.h"
+#include "../realtest.h"
 
-int	OK_test00()
+int	KO_test03(void)
 {
-	if (ft_strlen("hello") != 5)
-		return(1);
-	else
-		return(0;)
+	int arr[128];
+	int i = 0;
+	int j = 0;
+
+	while (i < 128)
+	{
+		if (i < 32 || i > 126)
+			arr[j++] = i;
+		i++;
+	}
+	i = 0;
+	while (i < 128)
+	{
+		if (ft_isprint(arr[i]) != 0)
+			return -1;
+		i++;
+	}
+	return 0;
 }

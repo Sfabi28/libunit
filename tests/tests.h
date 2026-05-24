@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tests.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sfabi <sfabi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 13:44:26 by elmondo           #+#    #+#             */
-/*   Updated: 2026/05/23 16:24:20 by sfabi            ###   ########.fr       */
+/*   Updated: 2026/05/24 14:49:55 by francema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # include <fcntl.h>
 # include <unistd.h>
 
-void	ft_putstr(const char *s);
+void	putstr(const char *s);
 int		run_test(const char *func, const char *name, int (*f)(void), FILE* fptr);
 
 #endif
