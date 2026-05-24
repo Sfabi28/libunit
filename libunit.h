@@ -6,7 +6,7 @@
 /*   By: sfabi <sfabi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 12:44:28 by elmondo           #+#    #+#             */
-/*   Updated: 2026/05/24 18:21:12 by sfabi            ###   ########.fr       */
+/*   Updated: 2026/05/24 20:19:12 by sfabi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,14 @@ t_unit_tests			*ft_lstlast(t_unit_tests *lst);
 int						ft_lstsize(t_unit_tests *lst);
 void					ft_putstr2(const char *s);
 const char				*get_signal_name(int status);
-void					run_test_child(t_unit_tests **lst, int (*f)(void),
-						FILE *fptr);
-int					run_test(t_unit_tests **lst, const char *func,
-						const char *name, int (*f)(void), FILE *fptr);
+void					run_test_child(t_unit_tests **lst, t_unit_tests *test,
+							FILE *fptr);
+int						run_test(t_unit_tests **lst, t_unit_tests *test,
+							FILE *fptr);
 FILE					*open_log_file(const char *type);
 void					free_test_node(t_unit_tests **lst);
-int						handle_test_result(int status, const char *func,
-							const char *name, FILE *fptr);
-int						print_signal_result(int status, const char *func,
-							const char *name, FILE *fptr);
+int						handle_test_result(int status, t_unit_tests *test,
+							FILE *fptr);
+int						print_signal_result(int status, t_unit_tests *test,
+							FILE *fptr);
 #endif

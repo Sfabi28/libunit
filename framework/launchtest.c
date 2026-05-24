@@ -6,7 +6,7 @@
 /*   By: sfabi <sfabi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 14:23:35 by elmondo           #+#    #+#             */
-/*   Updated: 2026/05/24 20:10:01 by sfabi            ###   ########.fr       */
+/*   Updated: 2026/05/24 20:18:14 by sfabi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,12 @@ const char	*get_signal_name(int status)
 	return (NULL);
 }
 
-void	run_test_child(t_unit_tests **lst, int (*f)(void), FILE *fptr)
+void	run_test_child(t_unit_tests **lst, t_unit_tests *test, FILE *fptr)
 {
 	int	null_fd;
+	int	(*f)(void);
 
+	f = test->fun;
 	while (*lst)
 		free_test_node(lst);
 	fclose(fptr);
@@ -54,8 +56,7 @@ void	run_test_child(t_unit_tests **lst, int (*f)(void), FILE *fptr)
 	_exit(f() != 0);
 }
 
-int	run_test(t_unit_tests **lst, const char *func, const char *name,
-	int (*f)(void), FILE *fptr)
+int	run_test(t_unit_tests **lst, t_unit_tests *test, FILE *fptr)
 {
 	pid_t	pid;
 	int		status;
@@ -64,13 +65,13 @@ int	run_test(t_unit_tests **lst, const char *func, const char *name,
 	ret_code = 0;
 	pid = fork();
 	if (pid == 0)
-		run_test_child(lst, f, fptr);
+		run_test_child(lst, test, fptr);
 	wait(&status);
-	ft_putstr2(func);
+	ft_putstr2(test->type);
 	ft_putstr2(":");
-	ft_putstr2(name);
+	ft_putstr2(test->name);
 	ft_putstr2(":[");
-	ret_code = handle_test_result(status, func, name, fptr);
+	ret_code = handle_test_result(status, test, fptr);
 	ft_putstr2("]\n");
 	return (ret_code);
 }
@@ -88,8 +89,7 @@ int	launchtest(t_unit_tests **lst)
 	tot = ft_lstsize(*lst);
 	while (*lst)
 	{
-		failed += run_test(lst, (*lst)->type, (*lst)->name, (*lst)->fun,
-			fptr);
+		failed += run_test(lst, *lst, fptr);
 		free_test_node(lst);
 	}
 	printf("\n\033[33m%d/%d tests passed\033[0m\n\n\n", tot + failed, tot);
