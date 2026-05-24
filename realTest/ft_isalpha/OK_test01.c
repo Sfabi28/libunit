@@ -3,15 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   OK_test01.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elmondo <elmondo@student.42firenze.it>     +#+  +:+       +#+        */
+/*   By: francema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-<<<<<<< HEAD:realTest/ft_isalpha/OK_test01.c
-/*   Created: 2026/05/23 15:34:49 by francema          #+#    #+#             */
-/*   Updated: 2026/05/24 14:56:30 by francema         ###   ########.fr       */
-=======
 /*   Created: 2026/05/23 15:34:49 by elmondo           #+#    #+#             */
-/*   Updated: 2026/05/24 14:06:58 by elmondo          ###   ########.fr       */
->>>>>>> a18923b0bd22c05a43e236b6d604e992c35bf5d9:realTest/ft_strlen/OK_test01.c
+/*   Updated: 2026/05/24 15:46:52 by francema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

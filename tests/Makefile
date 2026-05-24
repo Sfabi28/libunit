@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sfabi <sfabi@student.42.fr>                +#+  +:+       +#+         #
+#    By: francema <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/23 13:43:55 by elmondo           #+#    #+#              #
-#    Updated: 2026/05/24 12:52:02 by sfabi            ###   ########.fr        #
+#    Updated: 2026/05/24 15:45:06 by francema         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,7 @@ clean:
 	rm -f $(OBJS)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) *.log
 
 re: fclean all
 
